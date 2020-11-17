@@ -145,6 +145,17 @@ function clear() {
     localStorage.clear();
 }
 
+function calculateScores() {
+    var rows = document.getElementsByTagName("tr");
+    for (i = 1; i < rows.length; i++) {
+        var columns = rows[i].getElementsByTagName("td");
+        var name = parseInt(columns[0].textContent) || 0;
+        var salary = parseInt(columns[1].textContent) || 0;
+        var hours = parseInt(columns[2].textContent) || 0;
+        columns[columns.length - 2].textContent = name + salary + hours;
+    }
+}
+
 function genSlider(min, max, value, tbl) {
     let container = document.createElement("div");
     container.setAttribute("class", "slidecontainer")
