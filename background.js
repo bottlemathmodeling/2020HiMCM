@@ -137,6 +137,10 @@ function load(id, key) {
     }
 }
 
+function save(object, key) {
+    localStorage.setItem(key, object.innerHTML);
+}
+
 function genSlider(min, max, value, tbl) {
     let container = document.createElement("div");
     container.setAttribute("class", "slidecontainer")
