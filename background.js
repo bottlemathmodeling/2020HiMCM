@@ -29,11 +29,11 @@ class JobsItem {
         var tblBody = document.getElementById("jobs body");
         var row = document.createElement("tr");
 
-        for (var columnNum = 0; columnNum < 23; columnNum++) {
+        for (var columnNum = 1; columnNum <= 16; columnNum++) {
             var cell = document.createElement("td");
             var cellText;
-            switch (columnNum - 1) {
-                case -1: // Sbase
+            switch (columnNum) {
+                case 1: // Sbase
                     cell.addEventListener("keyup", function () {
                         save(tbl, "jobsTable");
                     })
@@ -96,12 +96,12 @@ class JobsItem {
             }
             cell.appendChild(cellText);
 
-            if (columnNum != 0) {
-                cell.contentEditable = false;
-                cell.setAttribute("contenteditable", false);
-            } else {
+            if (columnNum == 1) {
                 cell.contentEditable = true;
                 cell.setAttribute("contenteditable", true);
+            } else {
+                cell.contentEditable = false;
+                cell.setAttribute("contenteditable", false);
             }
             row.appendChild(cell);
         }
