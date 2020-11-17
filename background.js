@@ -719,4 +719,8 @@ var classIndex = 0;
 // load("jobs", "jobsTable");
 initPersonal()
 newRow();
+var jobsItem = new JobsItem("")
+jobsItem.addToTable()
+var tbl = document.getElementById("personal");
+localStorage.setItem("jobsTable", tbl.innerHTML);
 setupTable();
