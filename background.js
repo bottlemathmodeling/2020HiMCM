@@ -401,16 +401,16 @@ class JobsItem {
                     cellText = document.createTextNode(this.name);
                     break;
                 case 2: // Sbase
-                    cellText = genSlider(0, 50000, 0, tbl);
+                    cellText = genSlider(0, 5000, 0, tbl);
                     break;
                 case 3: // Sbonus
-                    cellText = genSlider(0, 5000, 0, tbl);
+                    cellText = genSlider(0, 1000, 0, tbl);
                     break;
                 case 4: //Ctransport
                     cellText = genSlider(0, 200, 0, tbl);
                     break;
                 case 5: //Cwork
-                    cellText = genSlider(0, 10000, 0, tbl);
+                    cellText = genSlider(0, 1000, 0, tbl);
                     break;
                 case 6: //Afuture
                     cellText = genSlider(0, 10, 0, tbl);
