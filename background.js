@@ -251,11 +251,11 @@ function calculateScores() {
 
         let nE = ((e - (7.25 * 5 * 2)) / ((30 * 8 * 12) - (7.25 * 5 * 2))) || 0
         let nR = (r / (10 + 0.1 * (10 * (1 + 1)))) || 0
-        let nT = (t - (2 * 5) / ((8 * 12) - (2 * 5) )) || 0
+        let nT = (t - (2 * 5) / ((8 * 12) - (2 * 5))) || 0
         let nW = (w - (-5 * 3) / ((-5 * 3) - (5 * 3))) || 0
 
         let final = (Weconomic * nE + Wrelevance * nR - Wtime * nT + Wenvironment * nW) || 0;
-        columns[columns.length - 2].textContent = final;
+        columns[columns.length - 2].textContent = Math.round(final * 100) / 100;
     }
 }
 
