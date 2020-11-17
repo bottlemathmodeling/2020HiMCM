@@ -76,6 +76,11 @@ class JobsItem {
 function setupTable() {
     var tbl = document.getElementById("jobs");
     var rows = document.getElementsByTagName("tr");
+    for (var i = 0; i < rows.length; i++) {
+        var columns = rows[i].getElementsByTagName("td");
+        for (var j = 0; j < columns.length; j++) {
+            var cell = columns[j];
+    }
 }
 }
 
