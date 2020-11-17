@@ -12,6 +12,10 @@ class JobsItem {
         var tblBody = document.getElementById("jobs body");
         var row = document.createElement("tr");
 
+        for (var columnNum = 0; columnNum < 5; columnNum++) {
+            var cell = document.createElement("td");
+            var cellText;
+            cell.appendChild(cellText);
 }
 }
 
