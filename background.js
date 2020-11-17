@@ -110,6 +110,13 @@ function setupTable() {
         }
     }
 }
+
+function checkInput(object) {
+    // var text = object.textContent;
+    // var regex = /([1-9]|1[012])[:]([0-5][0-9]) [A|P][M]/;
+    // var match = text.match(regex);
+    // return match && text === match[0];
+    return true;
 }
 
 function newRow() {
