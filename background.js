@@ -292,6 +292,13 @@ function genSlider(min, max, value, tbl) {
     return container;
 function genSelector(arr, tbl) {
     let selector = document.createElement("select");
+
+    for (var i = 0; i < arr.length; i++) {
+        let option = document.createElement("option");
+        option.setAttribute("value", arr[i][1]);
+        option.textContent = arr[i][0];
+        selector.appendChild(option);
+    }
     return selector;
 }
 }
