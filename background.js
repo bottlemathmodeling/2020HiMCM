@@ -45,6 +45,14 @@ class JobsItem {
                     })
                     cellText = document.createTextNode(this.score);
                     break;
+                case 4:
+                    cellText = document.createElement("button");
+                    cellText.innerHTML = "x";
+                    cellText.onclick = function () {
+                        tblBody.removeChild(this.parentNode.parentNode);
+                        localStorage.setItem("jobsTable", tbl.innerHTML);
+                    }
+                    break;
                 default:
                     break;
             }
