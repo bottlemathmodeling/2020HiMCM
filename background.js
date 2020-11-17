@@ -80,6 +80,34 @@ function setupTable() {
         var columns = rows[i].getElementsByTagName("td");
         for (var j = 0; j < columns.length; j++) {
             var cell = columns[j];
+            switch (j) {
+                case 1:
+                    cell.addEventListener("keyup", function () {
+                        if (checkInput(this)) {
+                            save(tbl, "jobsTable");
+                        }
+                    })
+                    break;
+                case 2:
+                    cell.addEventListener("keyup", function () {
+                        if (checkInput(this)) {
+                            save(tbl, "jobsTable");
+                        }
+                    })
+                    break;
+                case 4:
+                    cell.addEventListener("click", function () {
+                        var row = this.parentNode
+                        row.parentNode.removeChild(row);
+                        save(tbl, "jobsTable");
+                    });
+                default:
+                    cell.addEventListener("keyup", function () {
+                        save(tbl, "jobsTable");
+                    })
+                    break;
+            }
+        }
     }
 }
 }
