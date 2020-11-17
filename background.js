@@ -180,3 +180,10 @@ function genSlider(min, max, value, tbl) {
 
     return container;
 }
+
+var table = document.getElementById('jobs');
+var classIndex = 0;
+
+load("jobs", "jobsTable");
+newRow();
+setupTable();
