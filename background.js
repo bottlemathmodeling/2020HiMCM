@@ -285,6 +285,52 @@ function genSelector(arr, tbl) {
 
     return selector;
 }
+
+
+function initPersonal() {
+    var body = document.getElementsByTagName("body")[0];
+    var tbl = document.getElementById("personal");
+    var tblBody = document.getElementById("personal body");
+    var row = document.createElement("tr");
+
+    for (var columnNum = 1; columnNum <= 7; columnNum++) {
+        var cell = document.createElement("td");
+        var cellText;
+        switch (columnNum) {
+            case 1: //Pinteraction
+                cellText = genSlider(0, 10, 0, tbl);
+                break;
+            case 2: //Pdaily
+                cellText = genSlider(0, 10, 0, tbl);
+                break;
+            case 3: //Pconnection
+                cellText = genSlider(0, 10, 0, tbl);
+                break;
+            case 4: // wecon
+                cellText = genSlider(0, 10, 1, tbl);
+                break;
+            case 5: //wtime
+                cellText = genSlider(0, 10, 1, tbl);
+                break;
+            case 6: //wenv
+                cellText = genSlider(0, 10, 1, tbl);
+                break;
+            case 7: //wrel
+                cellText = genSlider(0, 10, 1, tbl);
+                break;
+            default:
+                break;
+        }
+        cell.appendChild(cellText);
+
+        cell.contentEditable = false;
+        cell.setAttribute("contenteditable", false);
+
+        row.appendChild(cell);
+    }
+    tblBody.appendChild(row);
+    tbl.appendChild(tblBody);
+    body.appendChild(tbl);
 }
 
 var table = document.getElementById('jobs');
