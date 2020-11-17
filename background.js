@@ -12,15 +12,15 @@ class JobsItem {
         this.Tweeks = arr[9] || "";
         this.Ttransport = arr[10] || "";
         this.Jinteraction = arr[11] || "";
-        this.Pinteraction = arr[12] || "";
-        this.Jdaily = arr[13] || "";
-        this.Pdaily = arr[14] || "";
-        this.Jconnection = arr[15] || "";
-        this.Pconnection = arr[16] || "";
-        this.Weconomic = arr[17] || "";
-        this.Wtime = arr[18] || "";
-        this.Wenvironment = arr[19] || "";
-        this.Wrelevance = arr[20] || "";
+        // this.Pinteraction = arr[12] || "";
+        this.Jdaily = arr[12] || "";
+        // this.Pdaily = arr[14] || "";
+        this.Jconnection = arr[13] || "";
+        // this.Pconnection = arr[16] || "";
+        // this.Weconomic = arr[17] || "";
+        // this.Wtime = arr[18] || "";
+        // this.Wenvironment = arr[19] || "";
+        // this.Wrelevance = arr[20] || "";
     }
 
     addToTable() {
