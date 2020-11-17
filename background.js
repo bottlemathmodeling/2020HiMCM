@@ -39,10 +39,24 @@ class JobsItem {
                         }
                     })
                     break;
+                case 3:
+                    cell.addEventListener("keyup", function () {
+                        save(tbl, "jobsTable");
+                    })
+                    cellText = document.createTextNode(this.score);
+                    break;
                 default:
                     break;
             }
             cell.appendChild(cellText);
+
+            if (columnNum == 4 || columnNum == 3 || columnNum == 2) {
+                cell.contentEditable = false;
+                cell.setAttribute("contenteditable", false);
+            } else {
+                cell.contentEditable = true;
+                cell.setAttribute("contenteditable", true);
+            }
 }
 }
 
