@@ -120,6 +120,14 @@ function checkInput(object) {
 }
 
 function newRow() {
+    var tbl = document.getElementById("jobs");
+    var add = document.getElementById("add");
+    add.onclick = function () {
+        var jobsItem = new JobsItem("", "", "", "")
+        jobsItem.addToTable()
+        localStorage.setItem("jobsTable", tbl.innerHTML);
+    }
+}
 function genSlider(min, max, value, tbl) {
     let container = document.createElement("div");
     container.setAttribute("class", "slidecontainer")
