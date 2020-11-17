@@ -299,6 +299,11 @@ function genSelector(arr, tbl) {
         option.textContent = arr[i][0];
         selector.appendChild(option);
     }
+    selector.onchange = function () {
+        save(tbl, "jobsTable");
+        out.textContent = this.value;
+    }
+
     return selector;
 }
 }
