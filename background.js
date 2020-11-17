@@ -39,73 +39,52 @@ class JobsItem {
                     })
                     cellText = document.createTextNode(this.name);
                     break;
-                case 0: // Sbase
+                case 2: // Sbase
                     cellText = genSlider(0, 50000, 0, tbl);
                     break;
-                case 1: // Sbonus
+                case 3: // Sbonus
                     cellText = genSlider(0, 5000, 0, tbl);
                     break;
-                case 2: //Ctransport
+                case 4: //Ctransport
                     cellText = genSlider(0, 200, 0, tbl);
                     break;
-                case 3: //Cwork
+                case 5: //Cwork
                     cellText = genSlider(0, 10000, 0, tbl);
                     break;
-                case 4: //Afuture
+                case 6: //Afuture
                     cellText = genSlider(0, 10, 0, tbl);
                     break;
-                case 5: //chard
-                    cellText = genSlider(0, 1, 0, tbl);
+                case 7: //chard
+                    cellText = genSelector([["yes", 1], ["no", 0]], tbl);
                     break;
-                case 6: //csoft
-                    cellText = genSlider(0, 1, 0, tbl);
+                case 8: //csoft
+                    cellText = genSelector([["yes", 1], ["no", 0]], tbl);
                     break;
-                case 7: //tweekly
+                case 9: //tweekly
                     cellText = genSlider(0, 56, 0, tbl);
                     break;
-                case 8: //tweeks
+                case 10: //tweeks
                     cellText = genSlider(0, 12, 0, tbl);
                     break;
-                case 9: //ttrans
+                case 11: //ttrans
                     cellText = genSlider(0, 120, 0, tbl);
                     break;
-                case 10: //Jinteraction
-                    cellText = genSlider(-1, 1, 0, tbl);
+                case 12: //Jinteraction
+                    cellText = genSelector([["individual", -1], ["group work", 1]], tbl);
                     break;
-                case 11: //Pinteraction
-                    cellText = genSlider(0, 10, 0, tbl);
-                    break;
-                case 12: //Jdaily
-                    cellText = genSlider(-1, 1, 0, tbl);
-                    break;
-                case 13: //Pdaily
-                    cellText = genSlider(0, 10, 0, tbl);
+                case 13: //Jdaily
+                    cellText = genSelector([["monotony", -1], ["variety", 1]], tbl);
                     break;
                 case 14: //Jconnection
-                    cellText = genSlider(-1, 1, 0, tbl);
+                    cellText = genSelector([["social", -1], ["alone", 1]], tbl);
                     break;
-                case 15: //Pconnection
-                    cellText = genSlider(0, 10, 0, tbl);
-                    break;
-                case 16: // wecon
-                    cellText = genSlider(0, 10, 0, tbl);
-                    break;
-                case 17: //wtime
-                    cellText = genSlider(0, 10, 0, tbl);
-                    break;
-                case 18: //wenv
-                    cellText = genSlider(0, 10, 0, tbl);
-                    break;
-                case 19: //wrel
-                    cellText = genSlider(0, 100, 0, tbl);
-                    break;
-                case 20: //final output
+                case 15: //final output
                     cell.addEventListener("keyup", function () {
                         save(tbl, "jobsTable");
                     })
                     cellText = document.createTextNode(this.name);
                     break;
-                case 21:
+                case 16:
                     cellText = document.createElement("button");
                     cellText.innerHTML = "x";
                     cellText.onclick = function () {
