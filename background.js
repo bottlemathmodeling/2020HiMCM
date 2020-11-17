@@ -72,6 +72,11 @@ class JobsItem {
         body.appendChild(tbl);
     }
 }
+
+function setupTable() {
+    var tbl = document.getElementById("jobs");
+    var rows = document.getElementsByTagName("tr");
+}
 }
 
 function newRow() {
