@@ -21,6 +21,8 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+html, body {
+    height: 100%;
 }
 
 /* HTML5 display-role reset for older browsers */ 
@@ -42,10 +44,22 @@ blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
+    margin: 0;
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+    background-size: cover;
+    font-family: sans-serif;
+    font-weight: 100;
 }
 table {
   border-collapse: collapse;
   border-spacing: 0;
+    /* width: 800px; */
+    border-collapse: collapse;
+    border-width: 100px;
+    overflow: hidden;
+    /* border-color: aliceblue; */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 /*
@@ -65,12 +79,20 @@ h1 {
   font-size: 40px;
   line-height: 44px;
   color: #3498DB;
+th, td {
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    min-width: 100px;
+    border: 1px dotted #55608f;
 }
 
 textarea {
   resize: vertical;
   font-size: 18px;
   font-family: "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+th {
+    text-align: left;
 }
 input[type=submit] {
   background-color: #3498DB;
@@ -82,11 +104,17 @@ input[type=submit] {
   cursor: pointer;
   border-radius: 10px;
   font-size: 18px;
+
+p {
+    line-height: 0%;
+    text-align: center;
 }
 
 .wrap {
   margin: 50px;
   overflow: hidden;
+thead {
+    border-color: #55608f;
 }
 .word-break{
   display: block;
@@ -94,6 +122,10 @@ input[type=submit] {
   -ms-word-break: break-all;
   word-break: break-all;
   word-break: break-word;
+
+thead th {
+    background-color: #55608f;
+    border-color: #55608f;
 }
 
 .error{

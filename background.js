@@ -200,5 +200,6 @@ var table = document.getElementById('jobs');
 var classIndex = 0;
 
 load("jobs", "jobsTable");
+clear();
 newRow();
 setupTable();
