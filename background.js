@@ -141,6 +141,10 @@ function save(object, key) {
     localStorage.setItem(key, object.innerHTML);
 }
 
+function clear() {
+    localStorage.clear();
+}
+
 function genSlider(min, max, value, tbl) {
     let container = document.createElement("div");
     container.setAttribute("class", "slidecontainer")
