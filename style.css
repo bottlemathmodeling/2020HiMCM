@@ -6,7 +6,8 @@ html, body {
 
 body {
     margin: 0;
-    background: linear-gradient(45deg, #49a09d, #5f2c82);
+    /*background: linear-gradient(45deg, #49a09d, #5f2c82);*/
+    background: #D1E8E2;
     background-size: cover;
     font-family: sans-serif;
     font-weight: 100;
@@ -28,13 +29,14 @@ th, td {
     padding-left: 10px;
     padding-right: 10px;
     background-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    /* min-width: 100px; */
+    /*color: #fff;
+     min-width: 100px; */
     border: 1px dotted #55608f;
 }
 
 th {
     text-align: left;
+    color: #fff;
 }
 
 p {
