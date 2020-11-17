@@ -30,6 +30,15 @@ class JobsItem {
                     })
                     cellText = document.createTextNode(this.salary);
                     break;
+                case 2:
+                    cellText = genSlider(0, 10, 5, tbl);
+
+                    cell.addEventListener("keyup", function () {
+                        if (checkInput(this)) {
+                            save(tbl, "jobsTable");
+                        }
+                    })
+                    break;
                 default:
                     break;
             }
