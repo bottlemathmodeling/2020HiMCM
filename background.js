@@ -245,7 +245,13 @@ function calculateScores() {
         let nT = (t - tMin / (tMax - tMin)) || 0;
         let nW = (w - wMin / (wMax - wMin)) || 0;
 
+        console.log(nE)
+        console.log(nR)
+        console.log(nT)
+        console.log(nW)
+
         let final = (Weconomic * nE + Wrelevance * nR - Wtime * nT + Wenvironment * nW) || 0;
+        // final = Jinteraction;
         columns[columns.length - 2].textContent = Math.round(final * 100) / 100;
     }
 }
@@ -273,6 +279,9 @@ function genSlider(min, max, value, tbl) {
     }
 
     return container;
+
+}
+
 function genSelector(arr, tbl) {
     let selector = document.createElement("select");
 
@@ -282,10 +291,16 @@ function genSelector(arr, tbl) {
         option.textContent = arr[i][0];
         selector.appendChild(option);
     }
-    selector.onchange = function () {
-        save(tbl, "jobsTable");
-        out.textContent = this.value;
-    }
+
+    // let out = document.createElement("p");
+    // out.textContent = arr[0];
+
+    // selector.appendChild(out);
+
+    // selector.onchange = function () {
+    //     save(tbl, "jobsTable");
+    //     out.textContent = this.value;
+    // }
 
     return selector;
 }
