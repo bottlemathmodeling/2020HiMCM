@@ -65,6 +65,12 @@ class JobsItem {
                 cell.contentEditable = true;
                 cell.setAttribute("contenteditable", true);
             }
+            row.appendChild(cell);
+        }
+        tblBody.appendChild(row);
+        tbl.appendChild(tblBody);
+        body.appendChild(tbl);
+    }
 }
 }
 
