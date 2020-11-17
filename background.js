@@ -290,12 +290,16 @@ function genSlider(min, max, value, tbl) {
     }
 
     return container;
+function genSelector(arr, tbl) {
+    let selector = document.createElement("select");
+    return selector;
+}
 }
 
 var table = document.getElementById('jobs');
 var classIndex = 0;
 
-load("jobs", "jobsTable");
-clear();
+// load("jobs", "jobsTable");
+initPersonal()
 newRow();
 setupTable();
