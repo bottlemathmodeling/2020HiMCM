@@ -145,6 +145,21 @@ function clear() {
     localStorage.clear();
 }
 
+function getJobs() {
+    var jobs = {}
+
+    var rows = document.getElementsByTagName("tr");
+    for (i = 1; i < rows.length; i++) {
+        var columns = rows[i].getElementsByTagName("td");
+        var name = columns[0].textContent;
+        var salary = columns[1].textContent;
+        var hours = columns[2].textContent;
+        jobs[name] = new ScheduleItem(name, salary, hours, 0);
+    }
+
+    return jobs;
+}
+
 function calculateScores() {
     var rows = document.getElementsByTagName("tr");
     for (i = 1; i < rows.length; i++) {
