@@ -593,13 +593,13 @@ function calculateScores() {
         let t = (Tweekly + Ttransport) * Tweeks;
         let w = Jinteraction * (Pinteraction - 5) + Jdaily * (Pdaily - 5) + Jconnection * (Pconnection - 5);
 
-        let eMin = 7.25 * 5 * 2;
-        let eMax = 30 * 8 * 12;
-        let rMax = 10 + 0.1 * (10 * (1 + 1));
-        let tMin = 2 * 5;
-        let tMax = 8 * 12;
-        let wMin = -5 * 3;
-        let wMax = 5 * 3;
+        let eMin = 72.5;
+        let eMax = 1250;
+        let rMax = 11.1;
+        let tMin = 10;
+        let tMax = 770;
+        let wMin = -15;
+        let wMax = 15;
 
         let nE = ((e - eMin) / (eMax - eMin)) || 0;
         let nR = (r / rMax) || 0;
