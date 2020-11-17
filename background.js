@@ -113,7 +113,7 @@ class JobsItem {
 
 function setupTable() {
     var tbl = document.getElementById("jobs");
-    var rows = document.getElementsByTagName("tr");
+    var rows = tbl.getElementsByTagName("tr");
     for (var i = 0; i < rows.length; i++) {
         var columns = rows[i].getElementsByTagName("th");
         for (var j = 0; j < columns.length; j++) {
@@ -183,23 +183,27 @@ function clear() {
     localStorage.clear();
 }
 
-function getJobs() {
-    var jobs = {}
+// function getJobs() {
+//     var jobs = {}
 
-    var rows = document.getElementsByTagName("tr");
-    for (i = 1; i < rows.length; i++) {
-        var columns = rows[i].getElementsByTagName("td");
-        var name = columns[0].textContent;
-        var salary = columns[1].textContent;
-        var hours = columns[2].textContent;
-        jobs[name] = new ScheduleItem(name, salary, hours, 0);
-    }
+//     var rows = document.getElementsByTagName("tr");
+//     for (i = 1; i < rows.length; i++) {
+//         var columns = rows[i].getElementsByTagName("td");
+//         var name = columns[0].textContent;
+//         var salary = columns[1].textContent;
+//         var hours = columns[2].textContent;
+//         jobs[name] = new ScheduleItem(name, salary, hours, 0);
+//     }
 
-    return jobs;
-}
+//     return jobs;
+// }
 
 function calculateScores() {
-    var rows = document.getElementsByTagName("tr");
+    var tbl = document.getElementById("jobs");
+    var rows = tbl.getElementsByTagName("tr");
+
+    var ptbl = document.getElementById("personal");
+    var prows = tbl.getElementsByTagName("td");
     for (i = 1; i < rows.length; i++) {
         var columns = rows[i].getElementsByTagName("td");
         var Sbase = parseInt(columns[1].textContent) || 0;
@@ -207,21 +211,21 @@ function calculateScores() {
         var Ctransport = parseInt(columns[3].textContent) || 0;
         var Cwork = parseInt(columns[4].textContent) || 0;
         var Afuture = parseInt(columns[5].textContent) || 0;
-        var chard = parseInt(columns[6].textContent) || 0;
-        var csoft = parseInt(columns[7].textContent) || 0;
+        var chard = parseInt(columns[6].childNodes[0].value) || 0;
+        var csoft = parseInt(columns[7].childNodes[0].value) || 0;
         var Tweekly = parseInt(columns[8].textContent) || 0;
         var Tweeks = parseInt(columns[9].textContent) || 0;
         var Ttransport = parseInt(columns[10].textContent) || 0;
-        var Jinteraction = parseInt(columns[11].textContent) || 0;
-        var Pinteraction = parseInt(columns[12].textContent) || 0;
-        var Jdaily = parseInt(columns[13].textContent) || 0;
-        var Pdaily = parseInt(columns[14].textContent) || 0;
-        var Jconnection = parseInt(columns[15].textContent) || 0;
-        var Pconnection = parseInt(columns[16].textContent) || 0;
-        var Weconomic = parseInt(columns[17].textContent) || 0;
-        var Wtime = parseInt(columns[18].textContent) || 0;
-        var Wenvironment = parseInt(columns[19].textContent) || 0;
-        var Wrelevance = parseInt(columns[20].textContent) || 0;
+        var Jinteraction = parseInt(columns[11].childNodes[0].value) || 0;
+        var Pinteraction = parseInt(prows[0].textContent) || 0;
+        var Jdaily = parseInt(columns[13].childNodes[0].value) || 0;
+        var Pdaily = parseInt(prows[1].textContent) || 0;
+        var Jconnection = parseInt(columns[15].childNodes[0].value) || 0;
+        var Pconnection = parseInt(prows[2].textContent) || 0;
+        var Weconomic = parseInt(prows[3].textContent) || 0;
+        var Wtime = parseInt(prows[4].textContent) || 0;
+        var Wenvironment = parseInt(prows[5].textContent) || 0;
+        var Wrelevance = parseInt(prows[6].textContent) || 0;
 
         let e = (Sbase + Sbonus - (Ctransport) / 120) * Tweeks - Cwork;
         let r = Afuture + 0.1 * (Afuture * (chard + csoft));
