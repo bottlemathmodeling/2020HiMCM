@@ -128,6 +128,15 @@ function newRow() {
         localStorage.setItem("jobsTable", tbl.innerHTML);
     }
 }
+
+function load(id, key) {
+    var object = document.getElementById(id);
+    var saved = localStorage.getItem(key);
+    if (saved) {
+        object.innerHTML = saved;
+    }
+}
+
 function genSlider(min, max, value, tbl) {
     let container = document.createElement("div");
     container.setAttribute("class", "slidecontainer")
