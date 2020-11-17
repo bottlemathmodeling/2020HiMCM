@@ -64,6 +64,10 @@ function genSlider(min, max, value, tbl) {
     container.appendChild(slider);
     container.appendChild(out);
 
+    slider.oninput = function () {
+        save(tbl, "jobsTable");
+        out.textContent = this.value;
+    }
 
     return container;
 }
