@@ -603,8 +603,8 @@ function calculateScores() {
 
         let nE = ((e - eMin) / (eMax - eMin)) || 0;
         let nR = (r / rMax) || 0;
-        let nT = (t - tMin / (tMax - tMin)) || 0;
-        let nW = (w - wMin / (wMax - wMin)) || 0;
+        let nT = ((t - tMin) / (tMax - tMin)) || 0;
+        let nW = ((w - wMin) / (wMax - wMin)) || 0;
 
         console.log(nE)
         console.log(nR)
