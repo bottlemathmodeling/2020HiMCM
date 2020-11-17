@@ -47,3 +47,23 @@ class JobsItem {
 }
 
 function newRow() {
+function genSlider(min, max, value, tbl) {
+    let container = document.createElement("div");
+    container.setAttribute("class", "slidecontainer")
+
+    let slider = document.createElement("input");
+    slider.setAttribute("type", "range");
+    slider.setAttribute("min", min);
+    slider.setAttribute("max", max);
+    slider.setAttribute("class", "slider");
+    slider.setAttribute("value", value)
+
+    let out = document.createElement("p");
+    out.textContent = value;
+
+    container.appendChild(slider);
+    container.appendChild(out);
+
+
+    return container;
+}
