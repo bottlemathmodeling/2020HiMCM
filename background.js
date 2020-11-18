@@ -564,7 +564,7 @@ function calculateScores() {
     var rows = tbl.getElementsByTagName("tr");
 
     var ptbl = document.getElementById("personal");
-    var prows = tbl.getElementsByTagName("td");
+    var prows = ptbl.getElementsByTagName("td");
     for (i = 1; i < rows.length; i++) {
         var columns = rows[i].getElementsByTagName("td");
         var Sbase = parseInt(columns[1].textContent) || 0;
@@ -588,7 +588,7 @@ function calculateScores() {
         var Wenvironment = parseInt(prows[5].textContent) || 0;
         var Wrelevance = parseInt(prows[6].textContent) || 0;
 
-        let e = (Sbase + Sbonus - (Ctransport) / 120) * Tweeks - Cwork;
+        let e = (Sbase + Sbonus - (Ctransport / 120)) * Tweeks - Cwork;
         let r = Afuture + 0.1 * (Afuture * (chard + csoft));
         let t = (Tweekly + Ttransport) * Tweeks;
         let w = Jinteraction * (Pinteraction - 5) + Jdaily * (Pdaily - 5) + Jconnection * (Pconnection - 5);
@@ -603,15 +603,15 @@ function calculateScores() {
 
         let nE = ((e - eMin) / (eMax - eMin)) || 0;
         let nR = (r / rMax) || 0;
-        let nT = (t - tMin / (tMax - tMin)) || 0;
-        let nW = (w - wMin / (wMax - wMin)) || 0;
+        let nT = ((t - tMin) / (tMax - tMin)) || 0;
+        let nW = ((w - wMin) / (wMax - wMin)) || 0;
 
-        console.log(nE)
-        console.log(nR)
-        console.log(nT)
-        console.log(nW)
+        console.log("economics: " + nE)
+        console.log("relevance: " + nR)
+        console.log("time: " + nT)
+        console.log("environment: " + nE)
 
-        let final = (Weconomic * nE + Wrelevance * nR - Wtime * nT + Wenvironment * nW) || 0;
+        let final = ((Weconomic * nE) + (Wrelevance * nR) - (Wtime * nT) + (Wenvironment * nW)) || 0;
         // final = Jinteraction;
         columns[columns.length - 2].textContent = Math.round(final * 100) / 100;
     }
@@ -719,4 +719,8 @@ var classIndex = 0;
 // load("jobs", "jobsTable");
 initPersonal()
 newRow();
+var jobsItem = new JobsItem("")
+jobsItem.addToTable()
+var tbl = document.getElementById("personal");
+localStorage.setItem("jobsTable", tbl.innerHTML);
 setupTable();
