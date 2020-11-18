@@ -72,6 +72,6 @@ button {
 .description{
     color: black;
 }
-a{
+a,a:visited{
     color: #5478e4;
 }
