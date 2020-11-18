@@ -7,10 +7,10 @@ html, body {
 body {
     margin: 0;
     /*background: linear-gradient(45deg, #49a09d, #5f2c82);*/
-    background: #D1E8E2;
+    background: #EDF6FF;
     background-size: cover;
-    font-family: sans-serif;
-    font-weight: 100;
+    font: 400 18px/24px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 40px;
 }
 
 table {
@@ -42,7 +42,7 @@ th {
 p {
     font-size: 20px;
     line-height: 5%;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 thead {
@@ -59,4 +59,16 @@ input {
 }
 button {
     font-size: 15px;
+    background-color:#5478e4;
+    color: white;
+    border: 4px;
+    padding: 14px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.description{
+    color: black;
 }
