@@ -75,3 +75,6 @@ button {
 a,a:visited{
     color: #5478e4;
 }
+a:hover{
+    color:#55608f;
+}
